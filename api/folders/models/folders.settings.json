@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "folders",
+  "info": {
+    "name": "Folders",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title"
+    },
+    "documents": {
+      "via": "folder",
+      "collection": "documents"
+    },
+    "owner": {
+      "via": "folders",
+      "plugin": "users-permissions",
+      "private": true,
+      "model": "user"
+    }
+  }
+}

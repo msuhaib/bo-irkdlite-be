@@ -1,0 +1,29 @@
+{
+  "kind": "collectionType",
+  "collectionName": "shares",
+  "info": {
+    "name": "share",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "canShare": {
+      "type": "boolean",
+      "default": false
+    },
+    "document": {
+      "via": "shares",
+      "model": "documents"
+    },
+    "user": {
+      "via": "shares",
+      "plugin": "users-permissions",
+      "model": "user"
+    }
+  }
+}

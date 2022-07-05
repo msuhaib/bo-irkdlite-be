@@ -1,0 +1,24 @@
+{
+  "kind": "collectionType",
+  "collectionName": "associates",
+  "info": {
+    "name": "Associate",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "members": {
+      "plugin": "users-permissions",
+      "collection": "user",
+      "via": "associate"
+    },
+    "name": {
+      "type": "string"
+    }
+  }
+}

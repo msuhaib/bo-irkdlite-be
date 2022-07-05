@@ -1,0 +1,49 @@
+{
+  "kind": "collectionType",
+  "collectionName": "documents",
+  "info": {
+    "name": "Documents",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "content": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "files",
+        "images",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title"
+    },
+    "folder": {
+      "via": "documents",
+      "model": "folders"
+    },
+    "owner": {
+      "via": "documents",
+      "plugin": "users-permissions",
+      "private": true,
+      "model": "user"
+    },
+    "shares": {
+      "collection": "share",
+      "via": "document"
+    }
+  }
+}

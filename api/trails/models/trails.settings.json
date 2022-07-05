@@ -1,0 +1,40 @@
+{
+  "kind": "collectionType",
+  "collectionName": "trails",
+  "info": {
+    "name": "Trails",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "contentType": {
+      "type": "string"
+    },
+    "action": {
+      "type": "string"
+    },
+    "author": {
+      "type": "json"
+    },
+    "request": {
+      "type": "json"
+    },
+    "method": {
+      "type": "string"
+    },
+    "route": {
+      "type": "string"
+    },
+    "params": {
+      "type": "json"
+    },
+    "statusCode": {
+      "type": "integer"
+    }
+  }
+}
